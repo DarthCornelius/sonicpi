@@ -1,0 +1,127 @@
+#challenge b
+use_bpm 160
+use_synth :dark_ambience
+#sleep20
+live_loop :strange, amp: 2 do
+  play :c4
+  play :c3
+  
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  
+  play :c4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  
+  play :c4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  
+  play :c4
+  
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  play :d4
+  play :d3
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :b3
+  play :e4
+  use_synth :prophet
+  play :e3, sustain: 4, amp: 0.1
+  use_synth :dark_ambience
+  sleep 0.5
+  play :e4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :c5
+  sleep 0.5
+  play :b4
+  sleep 0.5
+  play :g4
+  sleep 0.5
+  play :e4
+  sleep 0.5
+end
+
+#wait here 8 beats
+sleep 8
+
+live_loop :bass do
+  use_synth :beep
+  play :c1, amp: 0.75
+  sleep 2.5
+end
+
+sleep 4
+
+live_loop :static do
+  use_synth :prophet
+  play :c1, amp: 0.05, sustain: 4
+  play :c2, amp: 0.05, sustain: 4
+  sleep 4
+  play :c1, amp: 0.05, sustain: 4
+  sleep 4
+  play :c1, amp: 0.05, sustain: 4
+  sleep 4
+  play :d1, amp: 0.05, sustain: 4
+  sleep 4
+  play :b1, amp: 0.05, sustain: 4
+  sleep 4
+end
+
+
+
