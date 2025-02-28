@@ -1,0 +1,706 @@
+use_bpm 216
+live_loop :drum do
+  play 26
+  sample :drum_cymbal_pedal, amp: 0.25
+  sleep 0.5
+end
+define :bass_when_sax do
+  play :eb2
+  sleep 0.5
+  play :eb3
+  sleep 0.5
+  play :eb2
+  sleep 0.5
+  play :eb3
+  sleep 0.5
+  play :eb2
+  sleep 0.5
+  play :eb3
+  sleep 0.5
+  
+  play :c2
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :c2
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :c2
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  
+  play :eb2
+  sleep 0.5
+  play :eb3
+  sleep 0.5
+  play :eb2
+  sleep 0.5
+  play :eb3
+  sleep 0.5
+  play :eb2
+  sleep 0.5
+  play :eb3
+  sleep 0.5
+  
+  play :gb2
+  sleep 0.5
+  play :gb3
+  sleep 0.5
+  play :gb2
+  sleep 0.5
+  play :gb3
+  sleep 0.5
+  play :gb2
+  sleep 0.5
+  play :gb3
+  sleep 0.5
+  
+  play :a2
+  sleep 0.5
+  play :a3
+  sleep 0.5
+  play :a2
+  sleep 0.5
+  play :a3
+  sleep 0.5
+  play :a2
+  sleep 0.5
+  play :a3
+  sleep 0.5
+  
+  play :fs2
+  sleep 0.5
+  play :fs3
+  sleep 0.5
+  play :fs2
+  sleep 0.5
+  play :fs3
+  sleep 0.5
+  play :fs2
+  sleep 0.5
+  play :fs3
+  sleep 0.5
+  
+  play :a2
+  sleep 0.5
+  play :a3
+  sleep 0.5
+  play :a2
+  sleep 0.5
+  play :a3
+  sleep 0.5
+  play :a2
+  sleep 0.5
+  play :a3
+  sleep 0.5
+  
+  play :c3
+  sleep 0.5
+  play :c4
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :c4
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :c4
+  sleep 0.5
+  
+  play :eb2
+  sleep 0.5
+  play :eb3
+  sleep 0.5
+  play :eb2
+  sleep 0.5
+  play :gb2
+  sleep 0.5
+  play :gb3
+  sleep 0.5
+  play :a2
+  sleep 0.5
+  play :a3
+  sleep 0.5
+  play :a2
+  sleep 0.5
+end
+sleep 4
+2.times do
+  define :first_sax_bass do
+    play :g1
+    sleep 0.5
+    play :g2
+    sleep 0.5
+    play :g1
+    sleep 0.5
+    play :g2
+    sleep 0.5
+    play :g1
+    sleep 0.5
+    play :g2
+    sleep 0.5
+    play :g1
+    sleep 0.5
+    play :g2
+    sleep 0.5
+    
+    play :ab1
+    sleep 0.5
+    play :ab2
+    sleep 0.5
+    play :ab1
+    sleep 0.5
+    play :ab2
+    sleep 0.5
+    play :ab1
+    sleep 0.5
+    play :ab2
+    sleep 0.5
+    play :ab1
+    sleep 0.5
+    play :ab2
+    sleep 0.5
+    
+    play :a1
+    sleep 0.5
+    play :a2
+    sleep 0.5
+    play :a1
+    sleep 0.5
+    play :a2
+    sleep 0.5
+    play :a1
+    sleep 0.5
+    play :a2
+    sleep 0.5
+    play :a1
+    sleep 0.5
+    play :a2
+    sleep 0.5
+    
+    play :bb1
+    sleep 0.5
+    play :bb2
+    sleep 0.5
+    play :bb1
+    sleep 0.5
+    play :b1
+    sleep 0.5
+    play :bb2
+    sleep 0.5
+    play :bb1
+    sleep 0.5
+    
+  end
+  define :strong_highmain_chord do
+    use_synth :blade
+    play :e4
+    play :e5
+    play :bb4
+    play :gb4
+    sleep 1
+    sleep 0.5
+    play :e4
+    play :e5
+    play :bb4
+    play :gb4
+    sleep 1
+    sleep 0.5
+    play :cb5
+    play :fb5
+    play :fb4
+    play :a4
+    sleep 1
+    play :db4
+    play :db5
+    play :ab4
+    play :f4
+    sleep 1
+  end
+  define :highmain_chord do
+    use_synth :blade
+    play :e4
+    play :e5
+    play :bb4
+    sleep 1
+    sleep 0.5
+    play :e4
+    play :e5
+    play :bb4
+    sleep 1
+    sleep 0.5
+    play :cb5
+    play :fb5
+    play :fb4
+    sleep 1
+    play :db4
+    play :db5
+    play :ab4
+    sleep 1
+  end
+  define :highmain_bass do
+    play :e2
+    sleep 0.5
+    play :e3
+    sleep 0.5
+    play :e3
+    sleep 0.5
+    play :e2
+    sleep 0.5
+    play :e3
+    sleep 0.5
+    play :e3
+    sleep 0.5
+    play :fb2
+    sleep 0.5
+    play :fb3
+    sleep 0.5
+    play :db2
+    sleep 0.5
+    play :db3
+    sleep 0.5
+  end
+  define :main_bass do
+    play :c2
+    sleep 0.5
+    play :c3
+    sleep 0.5
+    play :c3
+    sleep 0.5
+    play :c2
+    sleep 0.5
+    play :c3
+    sleep 0.5
+    play :c3
+    sleep 0.5
+    play :db2
+    sleep 0.5
+    play :db3
+    sleep 0.5
+    play :b1
+    sleep 0.5
+    play :bb2
+    sleep 0.5
+  end
+  define :main_chord do
+    use_synth :blade
+    play :c4
+    play :c5
+    play :g4
+    sleep 1
+    sleep 0.5
+    play :c4
+    play :c5
+    play :g4
+    sleep 1
+    sleep 0.5
+    play :db4
+    play :db5
+    play :ab4
+    sleep 1
+    play :bb4
+    play :b3
+    play :f4
+    sleep 1
+  end
+  
+  define :strong_main_chord do
+    use_synth :blade
+    play :c4
+    play :e4
+    play :c5
+    play :g4
+    sleep 1
+    sleep 0.5
+    play :c4
+    play :c5
+    play :g4
+    play :e4
+    
+    sleep 1
+    sleep 0.5
+    play :db4
+    play :db5
+    play :ab4
+    play :f4
+    
+    sleep 1
+    play :bb4
+    play :b3
+    play :f4
+    play :d4
+    
+    sleep 1
+  end
+  live_loop :first4t do
+    4.times do
+      main_chord
+      
+    end
+    stop
+  end
+  live_loop :first4b do
+    4.times do
+      main_bass
+      
+    end
+    stop
+  end
+  sleep 20
+  live_loop :second4t do
+    use_synth :winwood_lead
+    play :g4
+    sleep 0.5
+    play :db4
+    sleep 0.5
+    play :e4
+    sleep 0.5
+    play :g3, sustain: 2.5
+    sleep 2.5
+    play :a3
+    sleep 0.5
+    play :b3
+    sleep 0.5
+    play :db4
+    sleep 0.5
+    play :g4, sustain: 2.5
+    sleep 2.5
+    play :gb4
+    sleep 0.5
+    play :d4
+    sleep 0.5
+    play :a4, sustain: 3
+    sleep 3
+    play :bb4, sustain: 1.5
+    sleep 1.5
+    play :b4, sustain: 1.5
+    sleep 1.5
+    stop
+  end
+  live_loop :second4b do
+    first_sax_bass
+    stop
+    
+  end
+  sleep 16
+  live_loop :third4t do
+    4.times do
+      highmain_chord
+      
+    end
+    stop
+  end
+  live_loop :third4b do
+    4.times do
+      highmain_bass
+      
+    end
+    stop
+  end
+  sleep 20
+  live_loop :fourth4b do
+    4.times do
+      main_bass
+      
+    end
+    stop
+  end
+  
+  live_loop :fourth4t do
+    4.times do
+      main_chord
+      
+    end
+    stop
+  end
+  sleep 20
+  live_loop :fifth8b do
+    bass_when_sax
+    stop
+  end
+  live_loop :fifth8t do
+    use_synth :winwood_lead
+    2.times do
+      play :bb4, sustain: 2
+      sleep 2
+      play :a4
+      sleep 0.33
+      play :bb4
+      sleep 0.34
+      play :a4
+      sleep 0.33
+      play :fs4, sustain: 2
+      sleep 2
+      play :a4
+      sleep 1
+    end
+    play :db5, sustain: 2
+    sleep 2
+    play :c5
+    sleep 0.33
+    play :db5
+    sleep 0.34
+    play :c5
+    sleep 0.33
+    play :a4, sustain: 2
+    sleep 2
+    play :c5
+    sleep 1
+    play :eb5, sustain: 2
+    sleep 2
+    play :d5
+    sleep 0.33
+    play :eb5
+    sleep 0.34
+    play :d5
+    sleep 0.33
+    play :gb5, sustain: 2
+    sleep 2
+    play :f5
+    sleep 0.33
+    play :gb5
+    sleep 0.34
+    play :f5
+    sleep 0.33
+    play :e5
+    sleep 0.5
+    play :gb5
+    sleep 0.5
+    play :f5
+    sleep 0.5
+    play :e5
+    sleep 0.5
+    play :gb5
+    sleep 0.5
+    play :e5
+    sleep 0.5
+    play :gb5
+    sleep 0.5
+    play :f5
+    sleep 0.5
+    stop
+  end
+  sleep 28
+  live_loop :six4b do
+    4.times do
+      main_bass
+      
+    end
+    stop
+  end
+  
+  live_loop :six4t do
+    4.times do
+      main_chord
+      
+    end
+    stop
+  end
+  sleep 20
+  live_loop :seven4t do
+    4.times do
+      strong_main_chord
+    end
+    stop
+  end
+  
+  live_loop :seven4b do
+    4.times do
+      main_bass
+      
+    end
+    stop
+  end
+  sleep 20
+  live_loop :eight4b do
+    first_sax_bass
+    stop
+    
+  end
+  live_loop :eight4t do
+    use_synth :winwood_lead
+    play :g4
+    sleep 0.5
+    play :db4
+    sleep 0.5
+    play :e4
+    sleep 0.5
+    play :g3, sustain: 2.5
+    play :d3, sustain: 2.5
+    sleep 2.5
+    play :a3
+    sleep 0.5
+    play :b3
+    sleep 0.5
+    play :db4
+    sleep 0.5
+    play :g4, sustain: 2.5
+    play :e4, sustain: 2.5
+    sleep 2.5
+    play :gb4
+    sleep 0.5
+    play :d4
+    sleep 0.5
+    play :a4, sustain: 3
+    play :eb4, sustain: 3
+    sleep 3
+    play :bb4, sustain: 1.5
+    play :f4, sustain: 1.5
+    sleep 1.5
+    play :b4, sustain: 1.5
+    play :f4, sustain: 1.5
+    sleep 1.5
+    stop
+  end
+  sleep 16
+  live_loop :nine4t do
+    4.times do
+      strong_highmain_chord
+    end
+    stop
+  end
+  
+  live_loop :nine4b do
+    4.times do
+      highmain_bass
+      
+    end
+    stop
+  end
+  sleep 20
+  live_loop :ten4t do
+    4.times do
+      strong_main_chord
+    end
+    stop
+  end
+  
+  live_loop :ten4b do
+    4.times do
+      main_bass
+      
+    end
+    stop
+  end
+  sleep 20
+  live_loop :eleven8b do
+    bass_when_sax
+    stop
+  end
+  live_loop :eleven8t do
+    use_synth :winwood_lead
+    2.times do
+      play :bb4, sustain: 2
+      play :bb3, sustain: 2
+      sleep 2
+      play :a4
+      sleep 0.33
+      play :bb4
+      sleep 0.34
+      play :a4
+      sleep 0.33
+      play :fs3, sustain: 2
+      play :fs4, sustain: 2
+      sleep 2
+      play :a4
+      sleep 1
+    end
+    play :db5, sustain: 2
+    play :db4, sustain: 2
+    
+    sleep 2
+    play :c5
+    sleep 0.33
+    play :db5
+    sleep 0.34
+    play :c5
+    sleep 0.33
+    play :a4, sustain: 2
+    play :a3, sustain: 2
+    sleep 2
+    play :c5
+    play :c4
+    sleep 1
+    play :eb5, sustain: 2
+    play :eb4, sustain: 2
+    sleep 2
+    play :d5
+    sleep 0.33
+    play :eb5
+    sleep 0.34
+    play :d5
+    sleep 0.33
+    play :gb5, sustain: 2
+    play :gb4, sustain: 2
+    sleep 2
+    play :f5
+    sleep 0.33
+    play :gb5
+    sleep 0.34
+    play :f5
+    sleep 0.33
+    play :eb5
+    play :eb4
+    
+    sleep 0.5
+    play :gb5
+    sleep 0.5
+    play :f5
+    sleep 0.5
+    play :eb5
+    play :eb4
+    sleep 0.5
+    play :gb5
+    sleep 0.5
+    play :eb5
+    sleep 0.5
+    play :gb5
+    play :gb4
+    
+    sleep 0.5
+    play :f5
+    play :f4
+    sleep 0.5
+    stop
+  end
+  sleep 28
+  live_loop :twelve4b do
+    4.times do
+      main_bass
+      
+    end
+    stop
+  end
+  
+  live_loop :twelve4t do
+    4.times do
+      strong_main_chord
+      
+    end
+    stop
+  end
+end
+sleep 20
+
+live_loop :pen4b do
+  4.times do
+    highmain_bass
+    
+  end
+  stop
+end
+sleep 20
+live_loop :final4b do
+  4.times do
+    main_bass
+    
+  end
+  stop
+end
+sleep 20
+live_loop :drum do
+  stop
+end
+sample "C:/Users/cornelius_lucey/Downloads/Untitled video - Made with Clipchamp.mp3"
