@@ -1,8 +1,20 @@
+# Welcome to Sonic Pi
 use_bpm 216
+x=0.05
+define :ending do
+  sample "C:/Users/cornelius_lucey/Downloads/Untitled video - Made with Clipchamp.mp3"
+end
 live_loop :drum do
   play 26
-  sample :drum_cymbal_pedal, amp: 0.25
+  sample :drum_cymbal_pedal, amp: x
   sleep 0.5
+end
+live_loop :var do
+  4.times do
+    x=x+0.05
+    sleep 1
+  end
+  stop
 end
 define :bass_when_sax do
   play :eb2
@@ -194,49 +206,31 @@ sleep 4
     sleep 0.5
     
   end
-  define :strong_highmain_chord do
+  
+  define :highmain_chord do |extra1,extra2,extra3|
     use_synth :blade
     play :e4
-    play :e5
-    play :bb4
-    play :gb4
-    sleep 1
-    sleep 0.5
-    play :e4
-    play :e5
-    play :bb4
-    play :gb4
-    sleep 1
-    sleep 0.5
-    play :cb5
-    play :fb5
-    play :fb4
-    play :a4
-    sleep 1
-    play :db4
-    play :db5
-    play :ab4
-    play :f4
-    sleep 1
-  end
-  define :highmain_chord do
-    use_synth :blade
-    play :e4
+    play extra1
     play :e5
     play :bb4
     sleep 1
     sleep 0.5
     play :e4
     play :e5
+    play extra1
+    
     play :bb4
     sleep 1
     sleep 0.5
     play :cb5
     play :fb5
+    play extra2
+    
     play :fb4
     sleep 1
     play :db4
     play :db5
+    extra3
     play :ab4
     sleep 1
   end
@@ -284,25 +278,37 @@ sleep 4
     play :bb2
     sleep 0.5
   end
+  main_chord_notes = [:c4,:c5,:g4,:db4,:db5,:ab4,:bb4,:b3,:f4]
+  
   define :main_chord do
     use_synth :blade
-    play :c4
-    play :c5
-    play :g4
+    a=1
+    b=2
+    c=0
+    play main_chord_notes[a]
+    play main_chord_notes[b]
+    play main_chord_notes[c]
     sleep 1
+    
     sleep 0.5
-    play :c4
-    play :c5
-    play :g4
+    play main_chord_notes[a]
+    play main_chord_notes[b]
+    play main_chord_notes[c]
     sleep 1
+    a=a+3
+    b=b+3
+    c=c+3
     sleep 0.5
-    play :db4
-    play :db5
-    play :ab4
+    play main_chord_notes[a]
+    play main_chord_notes[b]
+    play main_chord_notes[c]
     sleep 1
-    play :bb4
-    play :b3
-    play :f4
+    a=a+3
+    b=b+3
+    c=c+3
+    play main_chord_notes[a]
+    play main_chord_notes[b]
+    play main_chord_notes[c]
     sleep 1
   end
   
@@ -349,34 +355,37 @@ sleep 4
     stop
   end
   sleep 20
-  live_loop :second4t do
+  define :second4tnotes do |sleep1, sleep2, sleep3,sleep4|
     use_synth :winwood_lead
     play :g4
-    sleep 0.5
+    sleep sleep1
     play :db4
-    sleep 0.5
+    sleep sleep1
     play :e4
-    sleep 0.5
+    sleep sleep1
     play :g3, sustain: 2.5
-    sleep 2.5
+    sleep sleep2
     play :a3
-    sleep 0.5
+    sleep sleep1
     play :b3
-    sleep 0.5
+    sleep sleep1
     play :db4
-    sleep 0.5
+    sleep sleep1
     play :g4, sustain: 2.5
-    sleep 2.5
+    sleep sleep2
     play :gb4
-    sleep 0.5
+    sleep sleep1
     play :d4
-    sleep 0.5
+    sleep sleep1
     play :a4, sustain: 3
-    sleep 3
+    sleep sleep3
     play :bb4, sustain: 1.5
-    sleep 1.5
+    sleep sleep4
     play :b4, sustain: 1.5
-    sleep 1.5
+    sleep sleep4
+  end
+  live_loop :second4t do
+    second4tnotes 0.5,2.5,3,1.5
     stop
   end
   live_loop :second4b do
@@ -387,7 +396,7 @@ sleep 4
   sleep 16
   live_loop :third4t do
     4.times do
-      highmain_chord
+      highmain_chord 0,0,0
       
     end
     stop
@@ -557,7 +566,7 @@ sleep 4
   sleep 16
   live_loop :nine4t do
     4.times do
-      strong_highmain_chord
+      highmain_chord :gb4,:a4,:f4
     end
     stop
   end
@@ -703,4 +712,4 @@ sleep 20
 live_loop :drum do
   stop
 end
-sample "C:/Users/cornelius_lucey/Downloads/Untitled video - Made with Clipchamp.mp3"
+ending
