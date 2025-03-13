@@ -1,0 +1,71 @@
+"C:/Users/cornelius_lucey/Downloads/MORTAL KOMBAT Scream.mp3"
+a = [:a4,:a5]
+c = [:c5,:c6]
+d = [:d5,:d6]
+e = [:e5,:e6]
+g = [:g4,:g5]
+f = [:f4,:f5]
+
+x=0
+y=1
+use_bpm 120
+use_synth :chiplead
+define :notes do |note1,note2|
+  play note1
+  play note2
+  sleep 0.5
+end
+# MEASURE 1 ---------------------------
+live_loop :melody do
+  notes a[x],a[y]
+  notes a[x],a[y]
+  notes c[x],c[y]
+  notes a[x],a[y]
+  notes d[x],d[y]
+  notes a[x],a[y]
+  notes e[x],e[y]
+  notes d[x],d[y]
+  # MEASURE 2 ---------------------------
+  notes c[x],c[y]
+  notes c[x],c[y]
+  notes e[x],e[y]
+  notes c[x],c[y]
+  notes :g5,:g6
+  notes :c4,:c5
+  notes e[x],e[y]
+  notes :c4,:c5
+  # MEASURE 3 ---------------------------
+  notes g[x],g[y]
+  notes g[x],g[y]
+  notes :b4,:b5
+  notes g[x],g[y]
+  notes c[x],c[y]
+  notes g[x],g[y]
+  notes d[x],d[y]
+  notes c[x],c[y]
+  # MEASURE 4 ---------------------------
+  notes f[x],f[y]
+  notes f[x],f[y]
+  notes a[x],a[y]
+  notes f[x],f[y]
+  notes c[x],c[y]
+  notes f[x],f[y]
+  notes c[x],c[y]
+  notes :b4,:b5
+end
+sleep 16
+live_loop :melody do
+  stop
+end
+live_loop :drum do
+  sample :drum_snare_hard
+  sleep 4
+end
+sleep 16
+live_loop :scream do
+  sample "C:/Users/cornelius_lucey/Downloads/MORTAL KOMBAT Scream.mp3",amp: 2
+  stop
+end
+live_loop :drum do
+  stop
+end
