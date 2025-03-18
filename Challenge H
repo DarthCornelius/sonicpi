@@ -54,14 +54,15 @@ live_loop :melody do
   notes :b4,:b5
 end
 sleep 16
-live_loop :melody do
-  stop
-end
+
 live_loop :drum do
   sample :drum_snare_hard
   sleep 4
 end
 sleep 16
+live_loop :melody do
+  stop
+end
 live_loop :scream do
   sample "C:/Users/cornelius_lucey/Downloads/MORTAL KOMBAT Scream.mp3",amp: 2
   stop
