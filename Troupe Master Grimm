@@ -1,0 +1,857 @@
+define :start do
+  sample "C:/Users/cornelius_lucey/Downloads/samusAppears.mp3"
+end
+define :theEnd do
+  sample "C:/Users/cornelius_lucey/Downloads/Hollow Knight OST - False Knight.mp3", amp: 3
+end
+define :song do |synth,amp|
+  define :tripletp do |one, two, three|
+    use_synth :piano
+    play one, amp: 2
+    sleep 0.33
+    play two, amp: 2
+    sleep 0.33
+    play three, amp: 2
+    sleep 0.34
+  end
+  define :lobass do |rest|
+    use_synth :piano
+    play :a1
+    play :a2
+    sleep 0.5
+    play :a2
+    sleep 0.5
+    play :a2
+    rest
+    sleep 0.5
+    play :a2
+    sleep 0.5
+  end
+  define :bass do |rest|
+    use_synth :piano
+    play :d3
+    rest
+    sleep 0.5
+    3.times do
+      play :d3
+      sleep 0.5
+    end
+  end
+  define :crazybass do
+    use_synth :piano
+    play :d3
+    play :d4
+    sleep 0.5
+    play :d3
+    play :a3
+    sleep 0.5
+    play :d3
+    play :c4
+    sleep 0.5
+    play :d3
+    play :d4
+    sleep 0.5
+    play :d3
+    play :d4
+    sleep 0.5
+    play :d3
+    play :a4
+    sleep 0.5
+    play :d3
+    play :d4
+    sleep 0.5
+    play :d3
+    play :d4
+    sleep 0.5
+    
+    play :e3
+    play :e4
+    sleep 0.5
+    play :e3
+    play :a3
+    sleep 0.5
+    play :e3
+    play :d4
+    sleep 0.5
+    play :e3
+    play :e4
+    sleep 0.5
+    play :e3
+    play :e4
+    sleep 0.5
+    play :e3
+    play :a3
+    sleep 0.5
+    play :e3
+    play :e4
+    sleep 0.5
+    play :e3
+    play :e4
+    sleep 0.5
+  end
+  define :fullchord do |note1,note2,note3,note4|
+    use_synth :saw
+    play note1, sustain: 4
+    play note2, sustain: 4
+    play note3, sustain: 4
+    play note4, sustain: 4
+    sleep 4
+  end
+  define :halfchord do |note1,note2,note3,note4|
+    use_synth :saw
+    play note1, sustain: 2
+    play note2, sustain: 2
+    play note3, sustain: 2
+    play note4, sustain: 2
+    sleep 2
+  end
+  define :bookend_chord do |hit1,hit2,hit3|
+    use_synth :prophet
+    play hit1, sustain: 1.5
+    play hit2, sustain: 1.5
+    play hit3
+    sample :drum_cymbal_pedal
+    sleep 0.5
+    use_synth synth
+    play :a3, amp
+    sleep 0.5
+    play :c4, amp
+    sleep 0.5
+    play :d4, amp
+  end
+  define :bookend_chord2 do |hit1,hit2,hit3|
+    use_synth :prophet
+    play hit1, sustain: 1.5
+    play hit2, sustain: 1.5
+    play hit3
+    sample :drum_cymbal_pedal
+    sleep 0.5
+    use_synth synth
+    play :a4, amp
+    sleep 0.5
+    play :cs5, amp
+    sleep 0.5
+    play :d5, amp
+  end
+  
+  define :normal_chord do |hit1|
+    use_synth synth
+    play hit1, amp
+    sleep 0.5
+    
+    play :a3, amp
+    sleep 0.5
+    play :d4, amp
+    sleep 0.5
+    play :e4, amp
+    sleep 0.5
+  end
+  define :normal_chord2 do |hit1,hit2,hit3|
+    use_synth synth
+    play hit1, amp
+    sleep 0.5
+    
+    play :a4, amp
+    sleep 0.5
+    play hit2, amp
+    sleep 0.5
+    play hit3, amp
+    sleep 0.5
+  end
+  define :chord1 do
+    use_synth :saw
+    play :a4, sustain: 2
+    play :d5, sustain: 2
+    sleep 2
+    play :a4, sustain: 1
+    play :cs5, sustain: 1
+    sleep 1
+    play :a4, sustain: 1
+    play :d5, sustain: 1
+    sample :drum_heavy_kick
+    sleep 1
+    play :a4, sustain: 2
+    play :e5, sustain: 2
+    sleep 2
+    play :a4, sustain: 1
+    play :d5, sustain: 1
+    sleep 1
+    play :a4, sustain: 1
+    play :e5, sustain: 1
+    sample :drum_heavy_kick
+    sleep 1
+  end
+  define :chord2 do
+    use_synth :saw
+    halfchord :a4, :c5, :d5, :a5
+    
+    play :gs4, sustain: 1
+    play :c5, sustain: 1
+    play :e5, sustain: 1
+    play :gs5, sustain: 1
+    sleep 1
+    play :a4, sustain: 1
+    play :c5, sustain: 1
+    play :d5, sustain: 1
+    play :a5, sustain: 1
+    sample :drum_heavy_kick
+    sleep 1
+    halfchord :b4, :b5, :gs5, :e5
+    play :a4, sustain: 1
+    play :c5, sustain: 1
+    play :d5, sustain: 1
+    play :a5, sustain: 1
+    sleep 1
+    play :b4, sustain: 1
+    play :b5, sustain: 1
+    play :gs5, sustain: 1
+    play :e5, sustain: 1
+    sample :drum_heavy_kick
+    sleep 1
+  end
+  
+  use_bpm 140
+  live_loop :one do
+    bookend_chord :d4, :a4, :d5
+    stop
+  end
+  live_loop :oneb do
+    bass play :d2
+    stop
+  end
+  sleep 2
+  live_loop :two do
+    normal_chord :e4
+    stop
+  end
+  live_loop :twob do
+    bass sleep 0
+    stop
+  end
+  sleep 2
+  a=0
+  abnotes = [:f4,:a3,:d4,:f4,:e4,:a3,:b3,:cs4,:d4,:a3,:cs4,:d4]
+  live_loop :abnormal_notes do
+    12.times do
+      use_synth synth
+      play abnotes[a]
+      sleep 0.5
+      a=a+1
+    end
+    stop
+  end
+  live_loop :abb do
+    use_synth :piano
+    
+    bass sleep 0
+    play :d3
+    sleep 0.5
+    play :a2
+    sleep 0.5
+    play :b2
+    sleep 0.5
+    play :c3
+    sleep 0.5
+    bass sleep 0
+    stop
+  end
+  sleep 6
+  live_loop :two do
+    normal_chord :e4
+    stop
+  end
+  live_loop :twob do
+    bass sleep 0
+    stop
+  end
+  sleep 2
+  threenote= [:g4,:fs4,:f4,:e4]
+  three=0
+  thramp = 0.25
+  live_loop :three do
+    4.times do
+      use_synth :piano
+      play threenote[three], amp: thramp
+      sleep 0.5
+      play :a3, amp: thramp
+      three=three+1
+      thramp=thramp+0.25
+      sleep 0.5
+    end
+    stop
+  end
+  live_loop :threeb do
+    use_synth :piano
+    
+    play :d3
+    play :g3
+    sleep 0.5
+    play :d3
+    sleep 0.5
+    play :d3
+    play :fs3
+    sleep 0.5
+    play :d3
+    sleep 0.5
+    
+    play :f2
+    play :d3
+    play :f3
+    sleep 0.5
+    play :d3
+    sleep 0.5
+    play :d3
+    play :e3
+    play :e2
+    sleep 0.5
+    play :d3
+    sleep 0.5
+    stop
+  end
+  sleep 4
+  live_loop :four do
+    bookend_chord2 :d4, :a4, :d5
+    
+    normal_chord2 :e5, :d5, :e5
+    
+    normal_chord2 :f5, :d5, :f5
+    
+    normal_chord2 :e5, :b4, :cs5
+    
+    normal_chord2 :d5, :cs5, :d5
+    
+    normal_chord2 :e5, :d5, :e5
+    stop
+  end
+  live_loop :fourb do
+    use_synth :piano
+    
+    bass play :d2
+    play :d3
+    sleep 0.5
+    play :d3
+    play :d2
+    sleep 0.5
+    play :d3
+    sleep 0.5
+    play :d3
+    play :d2
+    sleep 0.5
+    bass sleep 0
+    play :d3
+    sleep 0.5
+    play :a2
+    sleep 0.5
+    play :b2
+    sleep 0.5
+    play :c3
+    sleep 0.5
+    bass sleep 0
+    bass sleep 0
+    stop
+  end
+  sleep 12
+  live_loop :five do
+    use_synth :piano
+    play :g5, amp: 1
+    play :g4, amp: 1
+    sleep 0.5
+    play :a4 , amp: 1
+    sleep 0.5
+    play :fs5, amp: 0.75
+    play :fs4, amp: 0.75
+    sleep 0.5
+    play :a4, amp: 0.75
+    sleep 0.5
+    play :f5, amp: 0.5
+    play :f4, amp: 0.5
+    sleep 0.5
+    play :a4, amp: 0.5
+    sleep 0.5
+    play :e5, amp: 0.25
+    play :e4, amp: 0.25
+    sleep 0.5
+    play :a4, amp: 0.25
+    sleep 0.5
+    stop
+  end
+  live_loop :fiveb do
+    use_synth :piano
+    play :d3
+    play :g3
+    sleep 1
+    play :d3
+    play :fs3
+    sleep 1
+    10.times do
+      play :d2
+      sleep 0.1
+      play :d3
+      sleep 0.1
+    end
+    stop
+  end
+  sleep 4
+  live_loop :six do
+    4.times do
+      use_synth synth
+      
+      play :e4, amp
+      sleep 0.5
+      play :a3, amp
+      sleep 0.5
+      play :cs4, amp
+      sleep 0.5
+      play :e4, amp
+      sleep 0.5
+    end
+    stop
+  end
+  live_loop :sixb do
+    2.times do
+      bass play :d2
+      bass sleep 0
+    end
+    stop
+  end
+  sleep 8
+  live_loop :seven do
+    chord1
+    use_synth :saw
+    play :f5, sustain: 4
+    play :d5, sustain: 4
+    play :b4, sustain: 4
+    sample :drum_heavy_kick
+    sleep 4
+    play :e5, sustain: 4
+    play :cs5, sustain: 4
+    sleep 4
+    chord1
+    stop
+  end
+  live_loop :sevenb do
+    use_synth :piano
+    crazybass
+    play :b3, sustain: 2
+    play :d4, sustain: 2
+    play :f4, sustain: 2
+    sleep 2
+    play :f3
+    sleep 0.5
+    play :f3
+    play :a4
+    sleep 0.5
+    play :f3
+    play :d4
+    sleep 0.5
+    play :f3
+    play :f4
+    sleep 0.5
+    play :e3
+    play :e4
+    sleep 0.5
+    play :e3
+    play :a3
+    sleep 0.5
+    play :e3
+    play :d4
+    sleep 0.5
+    play :e3
+    play :e4
+    sleep 0.5
+    play :e3
+    play :e4
+    sleep 0.5
+    play :a2
+    play :a3
+    sleep 0.5
+    play :b2
+    play :b3
+    sleep 0.5
+    play :cs3
+    play :cs4
+    sleep 0.5
+    crazybass
+    stop
+  end
+  sleep 24
+  live_loop :eight do
+    use_synth :saw
+    halfchord :g5, :e5, :cs5, :b4
+    sample :drum_heavy_kick
+    halfchord :ds5, :fs5, :c5, :a4
+    sample :drum_heavy_kick
+    fullchord :b4, :d5, :gs4, :f5
+    sample :drum_heavy_kick
+    stop
+  end
+  live_loop :eightb do
+    eimp = 0.6
+    10.times do
+      play :g2, amp: eimp
+      sleep 0.1
+      play :g3, amp: eimp
+      sleep 0.1
+      eimp = eimp+ 0.01
+    end
+    10.times do
+      play :fs2, amp: eimp
+      sleep 0.1
+      play :fs3, amp: eimp
+      sleep 0.1
+      eimp = eimp+ 0.01
+    end
+    20.times do
+      play :f2, amp: eimp
+      sleep 0.1
+      play :f3, amp: eimp
+      sleep 0.1
+      eimp = eimp+ 0.01
+    end
+    stop
+  end
+  sleep 8
+  live_loop :nine do
+    chord2
+    use_synth :saw
+    fullchord :a5, :cs6, :c5, :ds5
+    sample :drum_heavy_kick
+    fullchord :e5, :b4, :b5, :gs5
+    sample :drum_heavy_kick
+    chord2
+    stop
+    
+  end
+  live_loop :nineb do
+    use_synth :piano
+    lobass sleep 0
+    lobass play :a1
+    lobass sleep 0
+    lobass play :a1
+    
+    2.times do
+      l=0.5
+      tripletp :es3, :e3, :ds3
+      tripletp :d3, :cs3, :bs2
+      tripletp :b2, :as2, :a2
+      play :g2
+      sleep 1
+    end
+    lobass sleep 0
+    lobass play :a1
+    lobass sleep 0
+    lobass play :a1
+    stop
+  end
+  sleep 24
+  live_loop :ten do
+    use_synth :saw
+    sample :drum_heavy_kick
+    halfchord :a4, :f4, :d5, :d4
+    sample :drum_heavy_kick
+    halfchord :e4, :g4, :d5, :as4
+    fullchord :a4, :c5, :fs4, :ds4
+    sample :drum_heavy_kick
+    halfchord :e4, :e5, :b4, :g4
+    sample :drum_heavy_kick
+    halfchord :a4, :c5, :ds5, :fs4
+    fullchord :b4, :d5, :gs4, :es4
+    sample :drum_heavy_kick
+    halfchord :a4, :fs5, :cs5, :fs4
+    play :f5, sustain: 1
+    play :d5, sustain: 1
+    play :b4, sustain: 1
+    play :gs4, sustain: 1
+    sleep 1
+    play :e5, sustain: 1
+    play :cs5, sustain: 1
+    play :as4, sustain: 1
+    play :g4, sustain: 1
+    sample :drum_heavy_kick
+    sleep 1
+    play :gs5, sustain: 2
+    play :ds5, sustain: 2
+    play :b4, sustain: 2
+    play :gs4, sustain: 2
+    sleep 2
+    play :g5, sustain: 1
+    play :e5, sustain: 1
+    play :cs5, sustain: 1
+    play :as4, sustain: 1
+    sleep 1
+    play :fs5, sustain: 1
+    play :d5, sustain: 1
+    play :c5, sustain: 1
+    play :a4, sustain: 1
+    sample :drum_heavy_kick
+    sleep 1
+    stop
+  end
+  live_loop :tenb do
+    tripletp :d2, :cs2, :d2
+    tripletp :e2, :d2, :d2
+    tripletp :f2, :e2, :f2
+    tripletp :g2, :f2, :g2
+    tripletp :a2, :f2, :a2
+    tripletp :b2, :a2, :b2
+    tripletp :c3, :b2, :c3
+    tripletp :d3, :c3, :d3
+    
+    tripletp :e2, :ds2, :e2
+    tripletp :fs2, :e2, :fs2
+    tripletp :g2, :fs2, :g2
+    tripletp :a2, :g2, :a2
+    tripletp :b2, :g2, :b2
+    tripletp :c3, :b2, :c3
+    tripletp :d3, :c3, :d3
+    tripletp :e3, :d3, :e3
+    
+    tripletp :fs2, :es2, :fs2
+    tripletp :gs2, :fs2, :gs2
+    tripletp :a2, :es2, :a2
+    tripletp :as2, :g2, :as2
+    tripletp :b2, :gs2, :b2
+    tripletp :c3, :a2, :c3
+    tripletp :cs3, :as2, :cs3
+    tripletp :ds3, :c3, :ds3
+    stop
+  end
+  sleep 24
+  live_loop :eleven do
+    use_synth :saw
+    fullchord :bb5, :f5, :db5, :bb4
+    halfchord :f5, :db5, :bb4, :g4
+    halfchord :db4, :db5, :bb4, :g4
+    
+    fullchord :gb5, :db5, :bb4, :gb4
+    sleep 4
+    fullchord :bb5, :f5, :db5, :bb4
+    
+    halfchord :f5, :db5, :bb4, :f4
+    
+    
+    halfchord :db4, :db5, :bb4, :f4
+    
+    fullchord 0, :db5, :a4, :gb4
+    fullchord :db5, :e4, :g4, :a4
+    stop
+    
+  end
+  live_loop :elevenb do
+    use_synth :organ_tonewheel
+    play :bb2, sustain: 8, amp: 2
+    play :bb1, sustain: 8, amp: 2
+    sleep 8
+    play :gb2, sustain: 4, amp: 2
+    play :gb1, sustain: 4, amp: 2
+    sleep 4
+    use_synth :piano
+    play :g2, amp: 2.5
+    play :g1, amp: 2.5
+    sleep 0.66
+    play :gb2, amp: 2.5
+    play :gb1, amp: 2.5
+    sleep 0.67
+    play :f2, amp: 2.5
+    play :f1, amp: 2.5
+    sleep 0.67
+    play :e2, amp: 2.5
+    play :e1, amp: 2.5
+    sleep 0.66
+    play :eb2, amp: 2.5
+    play :eb1, amp: 2.5
+    sleep 0.67
+    play :d2, amp: 2.5
+    play :d1, amp: 2.5
+    sleep 0.67
+    use_synth :organ_tonewheel
+    play :db2, sustain: 3, amp: 2
+    sleep 3
+    play :eb2, amp: 2
+    sleep 1
+    play :gb2, sustain: 2, amp: 2
+    sleep 2
+    play :ab2, amp: 2
+    sleep 1
+    play :a2, sustain: 4, amp: 2
+    sleep 4
+    play :a2, sustain: 4, amp: 2
+    sleep 4
+    stop
+  end
+end
+
+define :drums do
+  use_bpm 140
+  live_loop :drumming do
+    define :beat1 do
+      sample :drum_cymbal_hard, amp: 2
+      sample :drum_heavy_kick, amp: 2
+      sleep 0.25
+      3.times do
+        sample :drum_heavy_kick, amp: 2
+        sleep 0.25
+      end
+    end
+    define :beat2 do
+      sample :drum_snare_hard, amp: 2
+      sample :drum_cymbal_hard, amp: 2
+      sample :drum_heavy_kick, amp: 2
+      sleep 0.25
+      3.times do
+        sample :drum_heavy_kick, amp: 2
+        sleep 0.25
+      end
+    end
+    define :trio do
+      sample :drum_snare_hard, amp: 2
+      sleep 1/3
+      sample :drum_heavy_kick, amp: 2
+      sleep 1/3
+      sample :drum_snare_hard, amp: 2
+      sleep 1/3
+    end
+    define :trio2 do
+      sample :drum_heavy_kick, amp: 2
+      sleep 1/3
+      sample :drum_snare_hard, amp: 2
+      sleep 1/3
+      sample :drum_heavy_kick, amp: 2
+      sleep 1/3
+    end
+    sample :drum_cymbal_hard, amp: 2
+    sleep 11
+    2.times do
+      sample :drum_snare_hard, amp: 2
+      sleep 0.5
+      sample :drum_heavy_kick, amp: 2
+      sleep 0.5
+    end
+    8.times do
+      sample :drum_tom_lo_hard
+      sleep 0.25
+    end
+    sample :drum_cymbal_closed, amp: 2
+    sample :drum_heavy_kick, amp: 2
+    sleep 1.5
+    sample :drum_cymbal_closed, amp: 2
+    sample :drum_heavy_kick, amp: 2
+    sleep 1
+    sample :drum_cymbal_closed, amp: 2
+    sample :drum_heavy_kick, amp: 2
+    sleep 0.5
+    sample :drum_cymbal_closed, amp: 2
+    sample :drum_heavy_kick, amp: 2
+    sleep 1
+    sleep 5
+    trio
+    trio
+    trio
+    sample :drum_snare_hard
+    1/3
+    sample :drum_snare_hard
+    1/3
+    sample :drum_snare_hard
+    1/3
+    11.times do
+      beat1
+      beat2
+    end
+    beat1
+    4.times do
+      sample :drum_snare_hard, amp: 2
+      sleep 0.25
+    end
+    7.times do
+      beat1
+      beat2
+    end
+    trio
+    trio2
+    7.times do
+      beat1
+      beat2
+    end
+    4.times do
+      sample :drum_snare_hard, amp: 2
+      sleep 0.25
+    end
+    15.times do
+      beat1
+      beat2
+    end
+    trio
+    trio2
+    6.times do
+      beat1
+      beat2
+    end
+    2.times do
+      trio
+      trio2
+    end
+    6.times do
+      beat1
+      beat2
+    end
+    sample :drum_snare_hard, amp: 2
+    sample :drum_cymbal_hard, amp: 2
+    sample :drum_heavy_kick, amp: 2
+    sleep 0.25
+    3.times do
+      sample :drum_tom_hi_hard
+      sample :drum_heavy_kick
+      
+      sleep 0.125
+    end
+    6.times do
+      sample :drum_tom_mid_hard
+      sample :drum_heavy_kick
+      
+      sleep 0.125
+    end
+    10.times do
+      sample :drum_tom_lo_hard
+      sample :drum_heavy_kick
+      
+      sleep 0.125
+    end
+    8.times do
+      sample :drum_bass_hard
+      sample :drum_heavy_kick
+      
+      sleep 0.125
+    end
+    sample :drum_cymbal_hard
+    stop
+  end
+end
+start
+sleep 8
+song :organ_tonewheel, amp: 2
+sleep 32
+live_loop :drummer_boy do
+  drums
+  stop
+end
+live_loop :guitar do
+  sample "C:/Users/cornelius_lucey/Downloads/audio [music].mp3", amp: 0.75
+  stop
+end
+live_loop :melody do
+  
+  song :dsaw, amp: 1
+  sleep 34.5
+  use_synth :saw
+  play :d5, amp: 2, sustain: 4
+  play :a4, amp: 2, sustain: 4
+  play :d4, amp: 2, sustain: 4
+  use_synth :organ_tonewheel
+  play :d3, amp: 2, sustain: 4
+  play :d2, amp: 2, sustain: 4
+  sample :drum_cymbal_hard
+  sample :drum_heavy_kick
+  sleep 4.5
+  theEnd
+  stop
+end
